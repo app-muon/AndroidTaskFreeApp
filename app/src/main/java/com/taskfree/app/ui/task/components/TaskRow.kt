@@ -50,7 +50,7 @@ fun ReorderableCollectionItemScope.TaskRow(
     showHandle: Boolean = true,
     showCategory: Boolean = false,
     category: Category,
-    onLongPress: () -> Unit = {}
+    onClick: () -> Unit = {}
 ) {
     val isOverdue = task.due?.let { it < LocalDate.now() && task.completedDate == null } == true
     val overdueColor = Color.Red.copy(alpha = 0.3f)
@@ -65,7 +65,7 @@ fun ReorderableCollectionItemScope.TaskRow(
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .combinedClickable(onClick = {}, onLongClick = onLongPress),
+            .combinedClickable(onClick = onClick),
         elevation = CardDefaults.cardElevation(elevation),
         colors = CardDefaults.cardColors(containerColor = backgroundColor),
         shape = RoundedCornerShape(12.dp)

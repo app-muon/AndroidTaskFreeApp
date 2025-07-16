@@ -125,7 +125,7 @@
     <string name="tip_drag_the_handle_to_reorder_rows">Drag the ≡ handle to reorder rows</string>
 
     <string name="tip_more_actions_title">More actions</string>
-    <string name="tip_long_press_to_edit_and_view_tasks_and_more">Long-press a row to edit and view tasks and more</string>
+    <string name="tip_click_to_edit_and_view_tasks_and_more">Tap a row to edit and view tasks and more</string>
 
     <string name="tip_navigate_to_categories_title">Navigate to categories screen</string>
     <string name="tip_navigate_to_tasks_title">Navigate to tasks screen</string>

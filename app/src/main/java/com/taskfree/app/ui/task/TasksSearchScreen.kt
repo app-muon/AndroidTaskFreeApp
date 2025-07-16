@@ -122,9 +122,9 @@ fun TaskSearchScreen(
 
             tipManager.request(
                 OnboardingTip(
-                    TipId.T3_LONGPRESS_TASK,
+                    TipId.T3_CLICK_TASK,
                     context.getString(R.string.tip_more_actions_title),
-                    AnnotatedString(context.getString(R.string.tip_long_press_to_edit_and_view_tasks_and_more)),
+                    AnnotatedString(context.getString(R.string.tip_click_to_edit_and_view_tasks_and_more)),
                     Anchor.ScreenHeightPercent(0.2f)
                 )
             )
@@ -177,7 +177,7 @@ fun TaskSearchScreen(
             orderProperty = if (config.categoryId == null) OrderProperty.TODO_PAGE else OrderProperty.TASK_PAGE,
             config = config,
             onDueChange = { due = it },
-            onLongPressTask = { dialogs = TaskDialogs.Options(it) },
+            onClickTask = { dialogs = TaskDialogs.Options(it) },
             modifier = Modifier.weight(1f),
         )
 

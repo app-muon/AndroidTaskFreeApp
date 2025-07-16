@@ -100,9 +100,9 @@ fun CategoryListScreen(navController: NavHostController) {
             }
             tipManager.request(
                 OnboardingTip(
-                    TipId.C3_LONGPRESS_CATEGORY,
+                    TipId.C3_CLICK_CATEGORY,
                     ctx.getString(R.string.tip_more_actions_title),
-                    AnnotatedString(ctx.getString(R.string.tip_long_press_to_edit_and_view_tasks_and_more)),
+                    AnnotatedString(ctx.getString(R.string.tip_click_to_edit_and_view_tasks_and_more)),
                     Anchor.ScreenHeightPercent(0.2f)
                 )
             )
@@ -171,7 +171,7 @@ fun CategoryListScreen(navController: NavHostController) {
                     onDragStart = viewModel::onDragStart,
                     onDragEnd = viewModel::onDragEnd,
                     onDragMove = viewModel::onDragMove,
-                    onLongClick = { cat -> dialogs = Dialogs.Options(cat) })
+                    onClick = { cat -> dialogs = Dialogs.Options(cat) })
             }
         }
 

@@ -58,10 +58,7 @@ private fun rememberCategoryRowData(category: Category, count: Int): CategoryRow
 
 @Composable
 fun ReorderableCollectionItemScope.CategoryListRow(
-    category: Category,
-    count: Int,
-    isDragging: Boolean,
-    onLongClick: () -> Unit
+    category: Category, count: Int, isDragging: Boolean, onClick: () -> Unit
 ) {
     val rowData = rememberCategoryRowData(category, count)
 
@@ -78,9 +75,7 @@ fun ReorderableCollectionItemScope.CategoryListRow(
         modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = 8.dp)
-            .combinedClickable(
-                onClick = { }   , onLongClick = onLongClick
-            ),
+            .combinedClickable(onClick = onClick),
         elevation = CardDefaults.cardElevation(elevation),
         colors = CardDefaults.cardColors(containerColor = backgroundColor),
         shape = RoundedCornerShape(12.dp)

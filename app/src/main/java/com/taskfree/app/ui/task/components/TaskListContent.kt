@@ -61,7 +61,7 @@ fun TaskListContent(
     config: TaskScreenConfig,
     onDueChange: (DueChoice) -> Unit,
     modifier: Modifier = Modifier,
-    onLongPressTask: (TaskWithCategoryInfo) -> Unit,
+    onClickTask: (TaskWithCategoryInfo) -> Unit,
 ) {
     val context = LocalContext.current.applicationContext as android.app.Application
     val categoriesVm: CategoryViewModel = viewModel(factory = CategoryVmFactory(context))
@@ -301,14 +301,14 @@ fun TaskListContent(
                         Box(
                             Modifier
                                 .fillMaxWidth()
-                                .clickable { onLongPressTask(twci) }
+                                .clickable { onClickTask(twci) }
                                 .padding(horizontal = 8.dp, vertical = 2.dp)) {
                             TaskRow(
                                 task = twci.task,
                                 isDragging = isDragging,
                                 showCategory = true,
                                 category = twci.category,
-                                onLongPress = { onLongPressTask(twci) },
+                                onClick = { onClickTask(twci) },
                                 showHandle = draggingEnabled
                             )
                         }
